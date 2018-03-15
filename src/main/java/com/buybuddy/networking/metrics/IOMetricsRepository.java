@@ -1,7 +1,6 @@
 package com.buybuddy.networking.metrics;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Queue;
 
 public class IOMetricsRepository {
@@ -11,7 +10,7 @@ public class IOMetricsRepository {
      * Pushes metrics to the repository immediately.
      */
     public void pushImmediately() {
-        List<IOMetrics> metricsToBeSent = new ArrayList(this.metricsQueue.toArray());
+        ArrayList metricsToBeSent = new ArrayList(this.metricsQueue);
 
         //  TODO: Push metrics to the central repository.
 
