@@ -1,4 +1,4 @@
-package com.buybuddy.networking.metrics;
+package co.buybuddy.networking.metrics;
 
 import java.util.ArrayList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package com.buybuddy;
+package co.buybuddy;
 
 /**
  * Hello world!

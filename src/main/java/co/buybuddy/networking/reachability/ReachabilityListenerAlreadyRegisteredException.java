@@ -1,4 +1,4 @@
-package com.buybuddy.networking.reachability;
+package co.buybuddy.networking.reachability;
 
 public class ReachabilityListenerAlreadyRegisteredException extends Exception {
     private ReachabilityListener listener;

@@ -1,4 +1,4 @@
-package com.buybuddy;
+package co.buybuddy;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

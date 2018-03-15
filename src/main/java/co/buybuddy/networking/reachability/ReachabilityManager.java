@@ -1,4 +1,4 @@
-package com.buybuddy.networking.reachability;
+package co.buybuddy.networking.reachability;
 
 import java.util.ArrayList;
 
@@ -13,7 +13,7 @@ public abstract class ReachabilityManager {
     protected ReachabilityStatus currentStatus;
 
     public ReachabilityManager() {
-        this.listeners = new ArrayList<>();
+        listeners = new ArrayList<>();
         currentStatus = ReachabilityStatus.UNKNOWN;
     }
 
@@ -35,6 +35,6 @@ public abstract class ReachabilityManager {
      * @return Currently registered listeners.
      */
     public ArrayList<ReachabilityListener> getListeners() {
-        return listeners;
+        return (ArrayList)listeners.clone();
     }
 }

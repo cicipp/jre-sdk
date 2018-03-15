@@ -1,4 +1,4 @@
-package com.buybuddy.networking.authentication.persistence;
+package co.buybuddy.networking.authentication.persistence;
 
 public enum SecureType {
     PASSWORD,

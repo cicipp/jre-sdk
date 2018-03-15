@@ -1,4 +1,4 @@
-package com.buybuddy.networking.metrics;
+package co.buybuddy.networking.metrics;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

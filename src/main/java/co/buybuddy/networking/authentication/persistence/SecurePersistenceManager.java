@@ -1,4 +1,4 @@
-package com.buybuddy.networking.authentication.persistence;
+package co.buybuddy.networking.authentication.persistence;
 
 /**
  * An abstract class for secure persistence implementations.

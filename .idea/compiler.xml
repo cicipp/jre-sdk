@@ -9,8 +9,8 @@
         <module name="buybuddyjavasdk" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="buybuddyjavasdk" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="buybuddyjavasdk" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

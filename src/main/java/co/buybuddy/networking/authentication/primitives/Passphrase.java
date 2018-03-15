@@ -1,7 +1,7 @@
-package com.buybuddy.networking.authentication.primitives;
+package co.buybuddy.networking.authentication.primitives;
 
-import com.buybuddy.networking.authentication.persistence.SecurePersistenceManager;
-import com.buybuddy.networking.authentication.persistence.SecureType;
+import co.buybuddy.networking.authentication.persistence.SecurePersistenceManager;
+import co.buybuddy.networking.authentication.persistence.SecureType;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
