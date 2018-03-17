@@ -2,30 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a23beaa-efd7-4bdd-bf33-48ec67e13f3a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManagerTest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/NullListenerImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/ReachabilityManagerTest.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_4.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_4.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_59.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_59.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_with_invalid_iss.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_without_exp.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_without_iss.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/valid_token.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/Context.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/ConnectionSession.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWT.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTIsNotAuthenticException.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTMissingFieldException.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTTest.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/buybuddyjavasdk.iml" afterPath="$PROJECT_DIR$/buybuddyjavasdk.iml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/App.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/App.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/authentication/persistence/SecurePersistenceManager.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/persistence/SecurePersistenceManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/authentication/persistence/SecureType.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/persistence/SecureType.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/authentication/primitives/Credentials.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/Credentials.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/authentication/primitives/OneTimeCode.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/OneTimeCode.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/authentication/primitives/Passphrase.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/Passphrase.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/metrics/IOMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/metrics/IOMetrics.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/metrics/IOMetricsRepository.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/metrics/IOMetricsRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/reachability/ReachabilityListener.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/reachability/ReachabilityListenerAlreadyRegisteredException.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityListenerAlreadyRegisteredException.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/reachability/ReachabilityManager.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/reachability/ReachabilityStatus.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityStatus.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/buybuddy/AppTest.java" afterPath="$PROJECT_DIR$/src/test/java/co/buybuddy/AppTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/buybuddy/App.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/Passphrase.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/concrete/Passphrase.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManager.java" afterPath="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/buybuddy/AppTest.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,21 +44,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DomainPollingReachabilityManagerTest.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManagerTest.java">
+          <file leaf-file-name="JWT.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWT.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NullListenerImpl.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/NullListenerImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="32">
-                  <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+                <state relative-caret-position="144">
+                  <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -70,21 +58,21 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="DomainPollingReachabilityManager.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManager.java">
+          <file leaf-file-name="JWTTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="742">
-                  <caret line="73" column="39" lean-forward="true" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+                <state relative-caret-position="400">
+                  <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ReachabilityManager.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityManager.java">
+          <file leaf-file-name="token_with_invalid_iss.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_with_invalid_iss.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="86" lean-forward="false" selection-start-line="0" selection-start-column="86" selection-end-line="0" selection-end-column="86" />
                   <folding />
                 </state>
               </provider>
@@ -138,13 +126,29 @@
         <option value="$PROJECT_DIR$/src/test/java/com/buybuddy/networking/reachability/DomainPollingReachabilityManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/reachability/ReachabilityManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/buybuddy/networking/reachability/DomainPollingReachabilityManager.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/NullObserver.java" />
         <option value="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/ReachabilityManagerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/NullListener.java" />
         <option value="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/NullListenerImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManagerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/ConnectionSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/Context.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/JWTMissingFieldException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/JWTIsNotAuthentic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/JWTIsNotAuthenticException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/JWT.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/JWTMissingFieldException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/Passphrase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/concrete/Passphrase.java" />
+        <option value="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/authentication/artifacts/stealth/valid_token.txt" />
+        <option value="$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_without_exp.txt" />
+        <option value="$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_without_iss.txt" />
+        <option value="$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_with_invalid_iss.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWT.java" />
+        <option value="$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTMissingFieldException.java" />
+        <option value="$PROJECT_DIR$/src/test/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTTest.java" />
       </list>
     </option>
   </component>
@@ -177,7 +181,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
@@ -372,8 +376,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -381,6 +383,87 @@
             <path>
               <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
               <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="co" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="co" type="462c0819:PsiDirectoryNode" />
+              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="co" type="462c0819:PsiDirectoryNode" />
+              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="co" type="462c0819:PsiDirectoryNode" />
+              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="co" type="462c0819:PsiDirectoryNode" />
+              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="opt" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="co" type="462c0819:PsiDirectoryNode" />
+              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="stealth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
@@ -426,6 +509,41 @@
               <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
               <item name="networking" type="462c0819:PsiDirectoryNode" />
               <item name="authentication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="concrete" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="stealth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
@@ -478,7 +596,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
@@ -486,17 +604,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="buybuddy" type="462c0819:PsiDirectoryNode" />
-              <item name="reachability" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+              <item name="stealth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="buy-buddy-java-sdk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="buy-buddy-java-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="networking" type="462c0819:PsiDirectoryNode" />
+              <item name="reachability" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -533,7 +658,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DomainPollingReachabilityManagerTest">
+  <component name="RunManager" selected="JUnit.JWTTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -620,6 +745,56 @@
       <option name="PACKAGE_NAME" value="co.buybuddy.networking.reachability" />
       <option name="MAIN_CLASS_NAME" value="co.buybuddy.networking.reachability.DomainPollingReachabilityManagerTest" />
       <option name="METHOD_NAME" value="throwsExceptionWithNullDomain" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="JWTTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="co.buybuddy.networking.authentication.artifacts.stealth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="buybuddyjavasdk" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="co.buybuddy.networking.authentication.artifacts.stealth" />
+      <option name="MAIN_CLASS_NAME" value="co.buybuddy.networking.authentication.artifacts.stealth.JWTTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="JWTTest.throwsIfTokenDoesNotHaveIssField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="co.buybuddy.networking.authentication.artifacts.stealth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="buybuddyjavasdk" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="co.buybuddy.networking.authentication.artifacts.stealth" />
+      <option name="MAIN_CLASS_NAME" value="co.buybuddy.networking.authentication.artifacts.stealth.JWTTest" />
+      <option name="METHOD_NAME" value="throwsIfTokenDoesNotHaveIssField" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1194,16 +1369,20 @@
       <arguments />
       <envs />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.App" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.DomainPollingReachabilityManagerTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.DomainPollingReachabilityManagerTest.throwsExceptionWithNullDomain" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.JWTTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.JWTTest.throwsIfTokenDoesNotHaveIssField" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DomainPollingReachabilityManagerTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DomainPollingReachabilityManagerTest.throwsExceptionWithNullDomain" />
-        <item index="2" class="java.lang.String" itemvalue="Application.App" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.JWTTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.JWTTest.throwsIfTokenDoesNotHaveIssField" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DomainPollingReachabilityManagerTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DomainPollingReachabilityManagerTest.throwsExceptionWithNullDomain" />
+        <item index="4" class="java.lang.String" itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -1225,45 +1404,63 @@
       <workItem from="1521054667948" duration="1271000" />
       <workItem from="1521119750424" duration="1712000" />
       <workItem from="1521122942764" duration="4186000" />
-      <workItem from="1521127453539" duration="5949000" />
+      <workItem from="1521127453539" duration="5995000" />
+      <workItem from="1521284513288" duration="9448000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DomainPollingReachabilityManagerTest - 2018.03.15 at 19h 05m 02s.xml">
-      <configuration name="DomainPollingReachabilityManagerTest" configurationId="JUnit" />
+    <history-entry file="JWTTest - 2018.03.17 at 18h 31m 21s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DomainPollingReachabilityManagerTest - 2018.03.15 at 19h 07m 36s.xml">
-      <configuration name="DomainPollingReachabilityManagerTest" configurationId="JUnit" />
+    <history-entry file="JWTTest - 2018.03.17 at 18h 34m 31s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DomainPollingReachabilityManagerTest - 2018.03.15 at 19h 17m 23s.xml">
-      <configuration name="DomainPollingReachabilityManagerTest" configurationId="JUnit" />
+    <history-entry file="JWTTest - 2018.03.17 at 18h 36m 12s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DomainPollingReachabilityManagerTest_throwsExceptionWithNullDomain - 2018.03.15 at 19h 15m 00s.xml">
-      <configuration name="DomainPollingReachabilityManagerTest.throwsExceptionWithNullDomain" configurationId="JUnit" />
+    <history-entry file="JWTTest - 2018.03.17 at 18h 36m 38s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JWTTest - 2018.03.17 at 18h 39m 34s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JWTTest - 2018.03.17 at 18h 40m 25s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JWTTest - 2018.03.17 at 18h 42m 03s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JWTTest - 2018.03.17 at 18h 42m 27s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JWTTest - 2018.03.17 at 18h 42m 40s.xml">
+      <configuration name="JWTTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JWTTest_throwsIfTokenDoesNotHaveIssField - 2018.03.17 at 18h 40m 12s.xml">
+      <configuration name="JWTTest.throwsIfTokenDoesNotHaveIssField" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19643000" />
+    <option name="totallyTimeSpent" value="29137000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31902295" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31828275" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298887" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789317" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32716507" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32716507" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31532198" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2583466" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26033387" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298887" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1294,14 +1491,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/buybuddy/AppTest.java</url>
-          <line>17</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1310,84 +1500,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/persistence/SecureType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/persistence/SecurePersistenceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/Passphrase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buybuddyjavasdk.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="55" lean-forward="true" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/metrics/IOMetricsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/persistence/SecurePersistenceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="7" lean-forward="false" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -1413,9 +1525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1477,9 +1586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1505,7 +1611,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/buybuddy/networking/authentication/persistence/SecurePersistence.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/Passphrase.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/concrete/Passphrase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
@@ -1520,7 +1626,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/Passphrase.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/concrete/Passphrase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1558,13 +1664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/primitives/Passphrase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityStatus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -1576,9 +1675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1638,19 +1734,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar!/org/apache/commons/lang3/Validate.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1658,6 +1745,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="76" lean-forward="false" selection-start-line="27" selection-start-column="76" selection-end-line="27" selection-end-column="76" />
           <folding />
         </state>
       </provider>
@@ -1673,23 +1768,111 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/ReachabilityManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/ConnectionSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/concrete/Passphrase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="82" lean-forward="true" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTIsNotAuthenticException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/Context.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="73" column="39" lean-forward="true" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+        <state relative-caret-position="880">
+          <caret line="55" column="42" lean-forward="true" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/co/buybuddy/networking/reachability/DomainPollingReachabilityManagerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/co/buybuddy/networking/authentication/artifacts/stealth/valid_token.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        <state relative-caret-position="0">
+          <caret line="0" column="109" lean-forward="true" selection-start-line="0" selection-start-column="109" selection-end-line="0" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_without_exp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="177" lean-forward="false" selection-start-line="0" selection-start-column="177" selection-end-line="0" selection-end-column="177" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_without_iss.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="76" lean-forward="false" selection-start-line="0" selection-start-column="76" selection-end-line="0" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTMissingFieldException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth/token_with_invalid_iss.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="86" lean-forward="false" selection-start-line="0" selection-start-column="86" selection-end-line="0" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/co/buybuddy/networking/authentication/artifacts/stealth/JWTTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/buybuddy/networking/authentication/artifacts/stealth/JWT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
