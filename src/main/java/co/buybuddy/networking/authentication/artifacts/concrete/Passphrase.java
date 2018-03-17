@@ -1,4 +1,4 @@
-package co.buybuddy.networking.authentication.primitives;
+package co.buybuddy.networking.authentication.artifacts.concrete;
 
 import co.buybuddy.networking.authentication.persistence.SecurePersistenceManager;
 import co.buybuddy.networking.authentication.persistence.SecureType;

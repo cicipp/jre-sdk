@@ -39,7 +39,7 @@ public class DomainPollingReachabilityManager extends ReachabilityManager {
     public void startPolling() {
         if (!getListeners().isEmpty()) {
             //  We will start to polling immediately since there are listeners.
-            timerName = TIMER_NAME_PREFIX + Long.toString(COUNTER.getAndIncrement())
+            timerName = TIMER_NAME_PREFIX + Long.toString(COUNTER.getAndIncrement());
             timer = new Timer(timerName, USES_DAEMON_THREAD);
 
             timer.scheduleAtFixedRate(new TimerTask() {
