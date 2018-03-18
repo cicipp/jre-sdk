@@ -23,7 +23,7 @@ public class Quota {
     private Date quotaResetDate;
 
     /**
-     *Initializes a `BBKQuotaContext` object with the given consumed amount of quota, maximum amount of quota and the quota reset date.
+     *Initializes a `Quota` class with the given consumed amount of quota, maximum amount of quota and the quota reset date.
      * @param consumedAmount The consumed amount of quota.
      * @param maximumAmount The maximum amount of quota available.
      * @param quotaResetDate The reset date of the quota.
