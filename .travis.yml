@@ -4,4 +4,4 @@ jdk:
   - oraclejdk8
 
 install: true
-script: mvn test -f /pom.xml
+script: ant build
