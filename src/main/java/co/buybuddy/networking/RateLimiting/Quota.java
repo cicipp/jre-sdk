@@ -28,33 +28,33 @@ public class Quota {
      * @param maximumAmount The maximum amount of quota available.
      * @param quotaResetDate The reset date of the quota.
      */
-    Quota(int consumedAmount, int maximumAmount, Date quotaResetDate){
+   public Quota(int consumedAmount, int maximumAmount, Date quotaResetDate){
 
         this.consumedAmount = consumedAmount;
         this.maximumAmount = maximumAmount;
         this.quotaResetDate = quotaResetDate;
     }
 
-    int getConsumedAmount() {
+    public int getConsumedAmount() {
         return consumedAmount;
     }
 
-    int getMaximumAmount() {
+    public int getMaximumAmount() {
         return maximumAmount;
     }
 
-    int getRemainingAmount() {
+    public int getRemainingAmount() {
         return maximumAmount-consumedAmount;
     }
 
-    Date getQuotaResetDate() {
+    public Date getQuotaResetDate() {
         return quotaResetDate;
     }
 
     /**
      A boolean value that indicates whether if any available quota is left or not.
      */
-    boolean isAvailable() {
+    public boolean isAvailable() {
         return consumedAmount<maximumAmount;
     }
 }
