@@ -4,5 +4,4 @@ jdk:
   - oraclejdk8
 
 install: true
-script: ./mvnw clean install
-#script: mvn test -f ./source/pom.xml
+script: mvn test -f ./source/pom.xml
