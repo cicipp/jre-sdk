@@ -4,4 +4,5 @@ jdk:
   - oraclejdk8
 
 install: true
-script: ant test
+script: mvn test
+
