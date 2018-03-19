@@ -1,4 +1,4 @@
-package co.buybuddy.networking.RateLimiting;
+package co.buybuddy.networking.ratelimiting;
 
 import java.util.Date;
 
@@ -28,7 +28,7 @@ public class Quota {
      * @param maximumAmount The maximum amount of quota available.
      * @param quotaResetDate The reset date of the quota.
      */
-   public Quota(int consumedAmount, int maximumAmount, Date quotaResetDate){
+   public Quota(int consumedAmount, int maximumAmount, Date quotaResetDate) {
 
         this.consumedAmount = consumedAmount;
         this.maximumAmount = maximumAmount;
@@ -44,7 +44,7 @@ public class Quota {
     }
 
     public int getRemainingAmount() {
-        return maximumAmount-consumedAmount;
+        return maximumAmount - consumedAmount;
     }
 
     public Date getQuotaResetDate() {
@@ -55,6 +55,6 @@ public class Quota {
      A boolean value that indicates whether if any available quota is left or not.
      */
     public boolean isAvailable() {
-        return consumedAmount<maximumAmount;
+        return consumedAmount < maximumAmount;
     }
 }

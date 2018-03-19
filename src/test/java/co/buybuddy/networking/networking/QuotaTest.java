@@ -1,6 +1,6 @@
-package co.buybuddy.networking.Networking;
+package co.buybuddy.networking.networking;
 
-import co.buybuddy.networking.RateLimiting.Quota;
+import co.buybuddy.networking.ratelimiting.Quota;
 import org.junit.Test;
 
 import java.util.Date;
@@ -25,7 +25,7 @@ public class QuotaTest {
     public void calculatesRemainingAmountWithAvailability() {
         Quota quota = new Quota(80, 100, resetDate);
 
-        assertEquals(quota.getRemainingAmount(),quota.getMaximumAmount()-quota.getConsumedAmount());
+        assertEquals(quota.getRemainingAmount(),quota.getMaximumAmount() - quota.getConsumedAmount());
         assertTrue(quota.isAvailable());
     }
 
@@ -33,7 +33,7 @@ public class QuotaTest {
     public void calculatesRemainingAmountWithoutAvailability() {
         Quota quota = new Quota(100, 100, resetDate);
 
-        assertEquals(quota.getRemainingAmount(), quota.getMaximumAmount()-quota.getConsumedAmount());
+        assertEquals(quota.getRemainingAmount(), quota.getMaximumAmount() - quota.getConsumedAmount());
         assertFalse(quota.isAvailable());
     }
 }
