@@ -1,7 +1,7 @@
 package co.buybuddy.networking.authentication.artifacts.stealth;
 
-public class JWTIsNotAuthenticException extends Exception {
-    public JWTIsNotAuthenticException() {
+public class TokenIsNotAuthenticException extends Exception {
+    public TokenIsNotAuthenticException() {
         super("given token is not issued by platform");
     }
 }

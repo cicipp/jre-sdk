@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
-public class JWT {
+public class Token {
     private static final String EXPIRATION_FIELD = "exp";
     private static final String ISSUER_FIELD = "iss";
     private static final String TIMESTAMP_FIELD = "iat";
@@ -16,32 +16,32 @@ public class JWT {
     private static final String AUTHENTIC_ISSUER = "BuyBuddy";
     private static final Pattern JWT_SPLIT_REGEX = Pattern.compile(Pattern.quote("."));
 
-    private String token;
+    private String tokenString;
     private HashMap payload;
     private String issuer;
     private String subsidiary;
     private Date expiration;
     private Date issuedAt;
 
-    private Object setPayloadField(String key) throws JWTMissingFieldException {
+    private Object setPayloadField(String key) throws TokenMissingFieldException {
         if (!payload.containsKey(key)) {
-            throw new JWTMissingFieldException(key);
+            throw new TokenMissingFieldException(key);
         }
 
         return payload.get(key);
     }
 
     /**
-     * Creates a new JSON Web Token (RFC 7519) with given token string.
+     * Creates a new JSON Web Token (RFC 7519) with given tokenString string.
      *
      * This method should be used by the library, implicitly.
      * Users should not call this method.
-     * @param token The token string to represent JWT.
+     * @param token The tokenString string to represent Token.
      */
-    public JWT(String token) throws IOException, JWTMissingFieldException, JWTIsNotAuthenticException {
-        this.token = token;
+    public Token(String token) throws IOException, TokenMissingFieldException, TokenIsNotAuthenticException {
+        this.tokenString = token;
 
-        String payload = JWT_SPLIT_REGEX.split(this.token)[1];
+        String payload = JWT_SPLIT_REGEX.split(this.tokenString)[1];
 
         if (payload != null) {
             byte[] payloadBytes = Base64.getDecoder().decode(payload);
@@ -56,21 +56,21 @@ public class JWT {
             issuedAt = new Date(Integer.toUnsignedLong((int)setPayloadField(TIMESTAMP_FIELD)));
 
             if (!issuer.equals(AUTHENTIC_ISSUER)) {
-                throw new JWTIsNotAuthenticException();
+                throw new TokenIsNotAuthenticException();
             }
         }
     }
 
     /**
-     * Indicates if token is expired.
-     * @return A boolean value indicating expiration status of the token.
+     * Indicates if tokenString is expired.
+     * @return A boolean value indicating expiration status of the tokenString.
      */
     public boolean isExpired() {
         return expiration.before(new Date());
     }
 
     /**
-     * Returns the data the token is valid until.
+     * Returns the data the tokenString is valid until.
      * @return The date.
      */
     public Date getExpiration() {
@@ -78,7 +78,7 @@ public class JWT {
     }
 
     /**
-     * Returns the date the token was issued by the central authority.
+     * Returns the date the tokenString was issued by the central authority.
      * @return The date.
      */
     public Date getIssuedAt() {
@@ -86,15 +86,16 @@ public class JWT {
     }
 
     /**
-     * Token body of the JWT.
-     * @return Body of the JWT.
+     * Token body of the Token.
+     * @return Body of the Token.
      */
-    public String getToken() {
-        return token;
+    @Override
+    public String toString() {
+        return tokenString;
     }
 
     /**
-     * Payload of the JWT.
+     * Payload of the Token.
      * @return An hash map containing key-value pairs found in payload.
      */
     public HashMap getPayload() {

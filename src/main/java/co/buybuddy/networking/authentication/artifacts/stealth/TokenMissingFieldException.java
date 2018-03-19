@@ -1,9 +1,9 @@
 package co.buybuddy.networking.authentication.artifacts.stealth;
 
-public class JWTMissingFieldException extends Exception {
+public class TokenMissingFieldException extends Exception {
     private final String fieldName;
 
-    public JWTMissingFieldException(String fieldName) {
+    public TokenMissingFieldException(String fieldName) {
         super("field is missing: " + fieldName);
 
         this.fieldName = fieldName;
