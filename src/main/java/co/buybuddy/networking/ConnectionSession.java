@@ -1,7 +1,7 @@
 package co.buybuddy.networking;
 
-import co.buybuddy.networking.authentication.artifacts.stealth.JWT;
+import co.buybuddy.networking.authentication.artifacts.stealth.Token;
 
 public class ConnectionSession {
-    private JWT currentJWT;
+    private Token currentToken;
 }

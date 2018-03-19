@@ -6,11 +6,10 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static org.junit.Assert.*;
 
-public class JWTTest {
+public class TokenTest {
     public static final String basePath = "opt/java/test/co/buybuddy/networking/authentication/artifacts/stealth";
     public static String validToken;
     public final String tokenWithoutIssuer;
@@ -23,7 +22,7 @@ public class JWTTest {
         return new String(bytes, Charset.forName("UTF-8"));
     }
 
-    public JWTTest() throws IOException {
+    public TokenTest() throws IOException {
         validToken = readTokenToString( "/valid_token.txt");
         tokenWithoutIssuer = readTokenToString( "/token_without_iss.txt");
         tokenWithoutExpiration = readTokenToString( "/token_without_exp.txt");
@@ -31,17 +30,17 @@ public class JWTTest {
     }
 
     @Test
-    public void constructsTokenWithValidAttributes() throws JWTIsNotAuthenticException, IOException, JWTMissingFieldException {
-        JWT jwt = new JWT(validToken);
+    public void constructsTokenWithValidAttributes() throws TokenIsNotAuthenticException, IOException, TokenMissingFieldException {
+        Token token = new Token(validToken);
 
-        assertNotNull(jwt);
+        assertNotNull(token);
     }
 
     @Test
-    public void throwsIfTokenDoesNotHaveIssField() throws IOException, JWTIsNotAuthenticException {
+    public void throwsIfTokenDoesNotHaveIssField() throws IOException, TokenIsNotAuthenticException {
         try {
-            new JWT(tokenWithoutIssuer);
-        } catch (JWTMissingFieldException e) {
+            new Token(tokenWithoutIssuer);
+        } catch (TokenMissingFieldException e) {
             assertEquals(e.getFieldName(), "iss");
 
             return;
@@ -51,10 +50,10 @@ public class JWTTest {
     }
 
     @Test()
-    public void throwsIfTokenDoesNotHaveExpField() throws JWTIsNotAuthenticException, IOException {
+    public void throwsIfTokenDoesNotHaveExpField() throws TokenIsNotAuthenticException, IOException {
         try {
-            new JWT(tokenWithoutExpiration);
-        } catch (JWTMissingFieldException e) {
+            new Token(tokenWithoutExpiration);
+        } catch (TokenMissingFieldException e) {
             assertEquals(e.getFieldName(), "exp");
 
             return;
@@ -63,8 +62,8 @@ public class JWTTest {
         assertTrue(false);
     }
 
-    @Test(expected = JWTIsNotAuthenticException.class)
-    public void throwsIfIssIsNotAuthentic() throws JWTIsNotAuthenticException, IOException, JWTMissingFieldException {
-        new JWT(tokenWithInvalidIssuer);
+    @Test(expected = TokenIsNotAuthenticException.class)
+    public void throwsIfIssIsNotAuthentic() throws TokenIsNotAuthenticException, IOException, TokenMissingFieldException {
+        new Token(tokenWithInvalidIssuer);
     }
 }
