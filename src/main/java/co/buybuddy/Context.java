@@ -50,6 +50,8 @@ public class Context {
         Validate.notNull(credentials);
         Validate.notNull(observer);
 
+
+
         currentState = State.OPEN;
     }
 

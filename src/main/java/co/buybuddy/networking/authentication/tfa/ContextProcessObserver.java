@@ -9,7 +9,7 @@ import co.buybuddy.networking.authentication.primitives.OneTimeCode;
 public interface ContextProcessObserver {
     /**
      * Called when two-factor authentication over SMS is required. It should return a `OneTimeCode` instance
-     * if client implementation is managed to gather the data from the user. Client-side implementation might pass
+     * if client implementation is managed to gather the data from the user. HttpClientFactory-side implementation might pass
      * `null` if code was not entered by the user, in order to reset the authentication process.
      *
      * @return An `OneTimeCode` object constructed from the data taken from the user.
@@ -22,7 +22,7 @@ public interface ContextProcessObserver {
 
     /**
      * Called when two-factor authentication over email is required. It should return a `OneTimeCode` instance
-     * if client implementation is managed to gather the data from the user. Client-side implementation might pass
+     * if client implementation is managed to gather the data from the user. HttpClientFactory-side implementation might pass
      * `null` if code was not entered by the user, in order to reset the authentication process.
      * @return An `OneTimeCode` object constructed from the data taken from the user.
      * @throws ContextResolutionException This exception is thrown when this method is not implemented, but it is
@@ -35,7 +35,7 @@ public interface ContextProcessObserver {
     /**
      * Called when two-factor authentication over an external authenticator is required. It should return
      * a `OneTimeCode` instance if client implementation is managed to gather the data from the user.
-     * Client-side implementation might pass `null` if code was not entered by the user, in order to reset
+     * HttpClientFactory-side implementation might pass `null` if code was not entered by the user, in order to reset
      * the authentication process.
      * @return An `OneTimeCode` object constructed from the data taken from the user.
      * @throws ContextResolutionException This exception is thrown when this method is not implemented, but it is
