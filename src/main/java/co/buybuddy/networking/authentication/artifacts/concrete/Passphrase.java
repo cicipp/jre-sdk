@@ -3,6 +3,7 @@ package co.buybuddy.networking.authentication.artifacts.concrete;
 import co.buybuddy.networking.authentication.persistence.SecurePersistenceManager;
 import co.buybuddy.networking.authentication.persistence.SecureType;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
@@ -23,7 +24,7 @@ public class Passphrase {
         }
     }
 
-    void persist(SecurePersistenceManager manager, String key) {
+    void persist(SecurePersistenceManager manager, String key) throws IOException {
         //  TODO: Should also include user identifier.
         manager.persistData(
                 passkey.getBytes(StandardCharsets.UTF_8),

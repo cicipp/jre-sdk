@@ -4,7 +4,7 @@ Lead maintainers: [Emir Çiftçioğlu (eciftcioglu)](https://github.com/eciftcio
 
 ![Build status](https://img.shields.io/travis/heybuybuddy/jre-sdk.svg)
 
-**If you're searching for Android Software Development Kit, go to [android-sdk](https://github.com/heybuybuddy/android-sdk).**
+**If you're developing applications for Android devices, go to [android-sdk](https://github.com/heybuybuddy/android-sdk).**
 
 ## Abstract
 
