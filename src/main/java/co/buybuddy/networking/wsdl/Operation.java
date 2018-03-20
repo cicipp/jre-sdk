@@ -68,5 +68,7 @@ public class Operation {
             case DELETE:
                 return "DELETE";
         }
+
+        throw new InternalError("unsupported method type");
     }
 }

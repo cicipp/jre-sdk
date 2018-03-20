@@ -1,7 +1,6 @@
 package co.buybuddy;
 
 import co.buybuddy.networking.authentication.ContextResolutionError;
-import co.buybuddy.networking.authentication.artifacts.concrete.AuthenticationManager;
 import co.buybuddy.networking.authentication.artifacts.concrete.ConcreteAuthenticationException;
 import co.buybuddy.networking.authentication.artifacts.concrete.Passphrase;
 import co.buybuddy.networking.authentication.artifacts.concrete.TwoFactorAuthenticationException;
@@ -103,6 +102,8 @@ public class Context {
                         case PRE_OTC_OVER_GUARD_SCHEME:
                             return ONE_TIME_CODE_OVER_EXTERNAL_AUTHENTICATOR;
                     }
+
+                    throw new InternalError("unexpected authentication scheme: " + type);
                 }
             }
 
@@ -208,6 +209,8 @@ public class Context {
                     return new SignInResult(true, successfulResponse.type, successfulResponse.userId, new Passphrase(successfulResponse.userId, successfulResponse.passkey, new Date()));
                 } else if (response.code() == 404) {
                     throw new TwoFactorAuthenticationException(oneTimeCode);
+                } else {
+                    throw new InternalError("could not deserialize server response");
                 }
             } catch (JsonProcessingException exc) {
                 throw new InternalError("error thrown while serialization", exc);

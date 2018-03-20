@@ -1,5 +1,6 @@
 package co.buybuddy.networking.http;
 
+import co.buybuddy.networking.http.pathgen.UrlBuilder;
 import co.buybuddy.networking.wsdl.Operation;
 import co.buybuddy.networking.wsdl.OperationRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -11,22 +12,20 @@ import okhttp3.MediaType;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
+import javax.inject.Inject;
 import java.net.URL;
 import java.util.Map;
 
 public class RequestBuilder extends Request.Builder {
     public static final MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
 
+    @Inject
     private UrlBuilder urlBuilder;
+    
     private String method;
+
+    @Inject
     private OperationRepository repository;
-
-    public RequestBuilder(OperationRepository repository, UrlBuilder urlBuilder) {
-        super();
-
-        this.urlBuilder = urlBuilder;
-        this.repository = repository;
-    }
 
     @Override
     public RequestBuilder url(HttpUrl url) {
