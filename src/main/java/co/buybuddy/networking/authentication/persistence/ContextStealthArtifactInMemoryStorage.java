@@ -7,10 +7,10 @@ import java.io.IOException;
 /**
  * Stores a context artifact in memory.
  */
-public class ContextArtifactInMemoryStorage implements ContextArtifactStorage {
+public class ContextStealthArtifactInMemoryStorage implements ContextStealthArtifactStorage {
     private Token token;
 
-    public ContextArtifactInMemoryStorage(Token passphrase) {
+    public ContextStealthArtifactInMemoryStorage(Token passphrase) {
         this.token = token;
     }
 

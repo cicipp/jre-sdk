@@ -1,6 +1,6 @@
 package co.buybuddy.networking.authentication.tfa;
 
-import co.buybuddy.networking.authentication.ContextResolutionException;
+import co.buybuddy.networking.authentication.ContextResolutionError;
 import co.buybuddy.networking.authentication.primitives.OneTimeCode;
 
 /**
@@ -13,11 +13,11 @@ public interface ContextProcessObserver {
      * `null` if code was not entered by the user, in order to reset the authentication process.
      *
      * @return An `OneTimeCode` object constructed from the data taken from the user.
-     * @throws ContextResolutionException This exception is thrown when this method is not implemented, but it is
+     * @throws ContextResolutionError This exception is thrown when this method is not implemented, but it is
      * called by the context manager.
      */
-    public default OneTimeCode requiresSmsAuthentication() throws ContextResolutionException {
-        throw new ContextResolutionException(ContextProcessType.ONE_TIME_CODE_OVER_SMS);
+    public default OneTimeCode requiresSmsAuthentication() {
+        throw new ContextResolutionError(ContextProcessType.ONE_TIME_CODE_OVER_SMS);
     }
 
     /**
@@ -25,11 +25,11 @@ public interface ContextProcessObserver {
      * if client implementation is managed to gather the data from the user. HttpClientFactory-side implementation might pass
      * `null` if code was not entered by the user, in order to reset the authentication process.
      * @return An `OneTimeCode` object constructed from the data taken from the user.
-     * @throws ContextResolutionException This exception is thrown when this method is not implemented, but it is
+     * @throws ContextResolutionError This exception is thrown when this method is not implemented, but it is
      * called by the context manager.
      */
-    public default OneTimeCode requiresEmailAuthentication() throws ContextResolutionException {
-        throw new ContextResolutionException(ContextProcessType.ONE_TIME_CODE_OVER_EMAIL);
+    public default OneTimeCode requiresEmailAuthentication() {
+        throw new ContextResolutionError(ContextProcessType.ONE_TIME_CODE_OVER_EMAIL);
     }
 
     /**
@@ -38,11 +38,11 @@ public interface ContextProcessObserver {
      * HttpClientFactory-side implementation might pass `null` if code was not entered by the user, in order to reset
      * the authentication process.
      * @return An `OneTimeCode` object constructed from the data taken from the user.
-     * @throws ContextResolutionException This exception is thrown when this method is not implemented, but it is
+     * @throws ContextResolutionError This exception is thrown when this method is not implemented, but it is
      * called by the context manager.
      */
-    public default OneTimeCode requiresExternalAuthentication() throws ContextResolutionException {
-        throw new ContextResolutionException(ContextProcessType.ONE_TIME_CODE_OVER_EXTERNAL_AUTHENTICATOR);
+    public default OneTimeCode requiresExternalAuthentication() {
+        throw new ContextResolutionError(ContextProcessType.ONE_TIME_CODE_OVER_EXTERNAL_AUTHENTICATOR);
     }
 
     /**
