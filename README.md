@@ -27,46 +27,46 @@ Add following dependency entry to your `.pom` file.
 <dependency>
     <groupId>co.buybuddy</groupId>
     <artifactId>buybuddy-java-sdk</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-compile group: 'co.buybuddy', name: 'buybuddy-java-sdk', version: '1.0.3-SNAPSHOT' 
+compile group: 'co.buybuddy', name: 'buybuddy-java-sdk', version: '1.0.4-SNAPSHOT' 
 ```
 
 ### SBT
 
 ```
-libraryDependencies += "co.buybuddy" % "buybuddy-java-sdk" % "1.0.3-SNAPSHOT"
+libraryDependencies += "co.buybuddy" % "buybuddy-java-sdk" % "1.0.4-SNAPSHOT"
 ```
 
 ### Ivy
 
 ```xml
-<dependency org="co.buybuddy" name="buybuddy-java-sdk" rev="1.0.3-SNAPSHOT" />>
+<dependency org="co.buybuddy" name="buybuddy-java-sdk" rev="1.0.4-SNAPSHOT" />>
 ```
 
 ### Grape
 
 ```
 @Grapes(
-  @Grab(group='co.buybuddy', module='buybuddy-java-sdk', version='1.0.3-SNAPSHOT')
+  @Grab(group='co.buybuddy', module='buybuddy-java-sdk', version='1.0.4-SNAPSHOT')
 )
 ```
 
 ### Leiningen
 
 ```
-[co.buybuddy.buybuddy-java-sdk "1.0.3-SNAPSHOT"]
+[co.buybuddy.buybuddy-java-sdk "1.0.4-SNAPSHOT"]
 ```
 
 ### Buildr
 
 ```
-'co.buybuddy.buybuddy-java-sdk:buybuddy-java-sdk:1.0.3-SNAPSHOT'
+'co.buybuddy.buybuddy-java-sdk:buybuddy-java-sdk:1.0.4-SNAPSHOT'
 ```
 
 ## Support
