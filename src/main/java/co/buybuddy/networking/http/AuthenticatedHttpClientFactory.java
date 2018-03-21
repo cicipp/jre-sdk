@@ -9,7 +9,7 @@ public class AuthenticatedHttpClientFactory extends HttpClientFactory {
         super();
 
         this.context = context;
-        this.client = this.client.newBuilder()
+        this.client = (HttpClient)this.client.newBuilder()
                 .addInterceptor(new AuthenticationInterceptor(context))
                 .build();
     }

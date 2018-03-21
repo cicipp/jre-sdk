@@ -3,14 +3,13 @@ package co.buybuddy.networking.http;
 import okhttp3.OkHttpClient;
 
 public class HttpClientFactory {
-    protected OkHttpClient client;
+    protected HttpClient client;
 
     public HttpClientFactory() {
-        this.client = new OkHttpClient.Builder()
-                .build();
+        this.client = (HttpClient)(new OkHttpClient.Builder().build());
     }
 
-    public OkHttpClient getClient() {
+    public HttpClient getClient() {
         return client;
     }
 }

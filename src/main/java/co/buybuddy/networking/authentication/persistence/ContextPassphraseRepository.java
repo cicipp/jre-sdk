@@ -6,4 +6,5 @@ import java.io.IOException;
 
 public interface ContextPassphraseRepository {
     public Passphrase retrieve() throws IOException;
+    public void store(Passphrase passphrase) throws IOException;
 }

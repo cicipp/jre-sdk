@@ -2,9 +2,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
     <groupId>co.buybuddy</groupId>
     <artifactId>buybuddy-java-sdk</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
@@ -35,6 +41,64 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <inceptionYear>
+        2018
+    </inceptionYear>
+
+    <prerequisites>
+        <maven>3.0.3</maven>
+    </prerequisites>
+
+    <scm>
+        <connection>scm:git:https://github.com/heybuybuddy/jre-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:heybuybuddy/jre-sdk.git</developerConnection>
+        <url>https://github.com/heybuybuddy/jre-sdk</url>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>Chatatata</id>
+            <name>Buğra Ekuklu</name>
+            <email>ekuklu@icloud.com</email>
+            <organization>Buy Buddy Türk Anonim Şirketi</organization>
+            <organizationUrl>http://buybuddy.co</organizationUrl>
+            <timezone>+3</timezone>
+            <roles>
+                <role>Lead Maintainer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>GitHub Issue Tracker</system>
+        <url>https://github.com/heybuybuddy/jre-sdk/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Buy Buddy Java Software Development Kit</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Buy Buddy Java Software Development Kit Snapshot</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/heybuybuddy/jre-sdk</url>
+    </ciManagement>
 
     <dependencies>
         <dependency>
@@ -78,6 +142,11 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk15on</artifactId>
             <version>1.59</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger</artifactId>
+            <version>2.15</version>
         </dependency>
     </dependencies>
 </project>

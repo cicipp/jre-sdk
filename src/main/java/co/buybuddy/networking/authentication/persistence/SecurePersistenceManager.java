@@ -1,5 +1,7 @@
 package co.buybuddy.networking.authentication.persistence;
 
+import java.io.IOException;
+
 /**
  * An abstract class for secure persistence implementations.
  */
@@ -10,7 +12,7 @@ public abstract class SecurePersistenceManager {
      * @param type Type of the data.
      * @param key Key string to refer to the data later.
      */
-    public abstract void persistData(byte[] data, SecureType type, String key);
+    public abstract void persistData(byte[] data, SecureType type, String key) throws IOException;
 
     /**
      * Loads data from secure persistence layer.
@@ -18,12 +20,12 @@ public abstract class SecurePersistenceManager {
      * @param key Key string to refer to the data.
      * @return A byte array containing data.
      */
-    public abstract byte[] loadData(SecureType type, String key);
+    public abstract byte[] loadData(SecureType type, String key) throws IOException;
 
     /**
      * Removes data from secure persistence layer.
      * @param type Type of the data.
      * @param key Key string to refer to the data being removed.
      */
-    public abstract void removeData(SecureType type, String key);
+    public abstract void removeData(SecureType type, String key) throws IOException;
 }
