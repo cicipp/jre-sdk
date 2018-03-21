@@ -10,6 +10,9 @@ import co.buybuddy.networking.authentication.primitives.Credentials;
 import co.buybuddy.networking.authentication.primitives.OneTimeCode;
 import co.buybuddy.networking.authentication.tfa.ContextProcessObserver;
 import co.buybuddy.networking.authentication.tfa.ContextProcessType;
+import co.buybuddy.networking.errorhandling.InternalInconsistencyException;
+import co.buybuddy.networking.errorhandling.NetworkIOException;
+import co.buybuddy.networking.errorhandling.PlatformRPCException;
 import co.buybuddy.networking.http.HttpClient;
 import co.buybuddy.networking.http.HttpClientFactory;
 import co.buybuddy.networking.http.RequestBuilder;
@@ -89,21 +92,25 @@ public class Context {
                 }
 
                 @Override
-                public ContextProcessType deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
-                    String type = jsonParser.getText();
+                public ContextProcessType deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, InternalInconsistencyException {
+                    try {
+                        String type = jsonParser.getText();
 
-                    switch (type) {
-                        case INSECURE_SCHEME:
-                            return INSECURE;
-                        case PRE_OTC_OVER_SMS_SCHEME:
-                            return ONE_TIME_CODE_OVER_SMS;
-                        case PRE_OTC_OVER_EMAIL_SCHEME:
-                            return ONE_TIME_CODE_OVER_EMAIL;
-                        case PRE_OTC_OVER_GUARD_SCHEME:
-                            return ONE_TIME_CODE_OVER_EXTERNAL_AUTHENTICATOR;
+                        switch (type) {
+                            case INSECURE_SCHEME:
+                                return INSECURE;
+                            case PRE_OTC_OVER_SMS_SCHEME:
+                                return ONE_TIME_CODE_OVER_SMS;
+                            case PRE_OTC_OVER_EMAIL_SCHEME:
+                                return ONE_TIME_CODE_OVER_EMAIL;
+                            case PRE_OTC_OVER_GUARD_SCHEME:
+                                return ONE_TIME_CODE_OVER_EXTERNAL_AUTHENTICATOR;
+                        }
+
+                        throw new InternalInconsistencyException("unexpected authentication scheme: " + type);
+                    } catch (JsonProcessingException jpe) {
+                        throw new InternalInconsistencyException("cannot deserialize response", jpe);
                     }
-
-                    throw new InternalError("unexpected authentication scheme: " + type);
                 }
             }
 
@@ -161,7 +168,7 @@ public class Context {
             this.client = client;
         }
 
-        public SignInResult signIn(Credentials credentials) throws IOException, ConcreteAuthenticationException {
+        public SignInResult signIn(Credentials credentials) throws ConcreteAuthenticationException, InternalInconsistencyException, PlatformRPCException {
             SignInForm form = new SignInForm(credentials);
 
             try {
@@ -170,28 +177,37 @@ public class Context {
                         .serialize(form)
                         .build();
 
-                Response response = client.newCall(request).execute();
-                ObjectMapper mapper = new ObjectMapper();
+                try {
+                    Response response = client.newCall(request).execute();
 
-                if (response.code() == 100) {
-                    SignInResponseContinue continueResponse = mapper.readValue(response.body().byteStream(), SignInResponseContinue.class);
+                    try {
+                        ObjectMapper mapper = new ObjectMapper();
 
-                    return new SignInResult(false, continueResponse.type, continueResponse.userId);
-                } else if (response.code() == 201) {
-                    SignInResponseSuccessful successfulResponse = mapper.readValue(response.body().byteStream(), SignInResponseSuccessful.class);
+                        if (response.code() == 100) {
+                            SignInResponseContinue continueResponse = mapper.readValue(response.body().byteStream(), SignInResponseContinue.class);
 
-                    return new SignInResult(true, successfulResponse.type, successfulResponse.userId, new Passphrase(successfulResponse.userId, successfulResponse.passkey, new Date()));
-                } else if (response.code() == 404) {
-                    throw new ConcreteAuthenticationException(credentials);
-                } else {
-                    throw new InternalError("could not deserialize server response");
+                            return new SignInResult(false, continueResponse.type, continueResponse.userId);
+                        } else if (response.code() == 201) {
+                            SignInResponseSuccessful successfulResponse = mapper.readValue(response.body().byteStream(), SignInResponseSuccessful.class);
+
+                            return new SignInResult(true, successfulResponse.type, successfulResponse.userId, new Passphrase(successfulResponse.userId, successfulResponse.passkey, new Date()));
+                        } else if (response.code() == 404) {
+                            throw new ConcreteAuthenticationException(credentials);
+                        } else {
+                            throw new InternalInconsistencyException("unexpected response - " + response.code());
+                        }
+                    } catch (IOException io) {
+                        throw new InternalInconsistencyException("cannot deserialize response", io);
+                    }
+                } catch (IOException io) {
+                    throw new PlatformRPCException("signIn", io);
                 }
             } catch (JsonProcessingException exc) {
-                throw new InternalError("error thrown while serialization", exc);
+                throw new InternalInconsistencyException("error thrown while serialization", exc);
             }
         }
 
-        public SignInResult completeSignIn(SignInResult result, OneTimeCode oneTimeCode) throws IOException, ConcreteAuthenticationException, TwoFactorAuthenticationException {
+        public SignInResult completeSignIn(SignInResult result, OneTimeCode oneTimeCode) throws ConcreteAuthenticationException, TwoFactorAuthenticationException, InternalInconsistencyException {
             OneTimeCodeForm form = new OneTimeCodeForm(result.getUserId(), oneTimeCode);
 
             try {
@@ -210,10 +226,12 @@ public class Context {
                 } else if (response.code() == 404) {
                     throw new TwoFactorAuthenticationException(oneTimeCode);
                 } else {
-                    throw new InternalError("could not deserialize server response");
+                    throw new InternalInconsistencyException("could not deserialize server response");
                 }
             } catch (JsonProcessingException exc) {
-                throw new InternalError("error thrown while serialization", exc);
+                throw new InternalInconsistencyException("error thrown while serialization", exc);
+            } catch (IOException io) {
+
             }
         }
     }
@@ -241,7 +259,7 @@ public class Context {
      * @param credentials Credentials to be used in authentication.
      * @param observer An observer instance to survive from various authentication schemes.
      */
-    public void open(Credentials credentials, ContextProcessObserver observer) throws IOException, ConcreteAuthenticationException, TwoFactorAuthenticationException {
+    public void open(Credentials credentials, ContextProcessObserver observer) throws ConcreteAuthenticationException, TwoFactorAuthenticationException, InternalInconsistencyException, PlatformRPCException {
         Validate.notNull(credentials);
         Validate.notNull(observer);
 
@@ -264,7 +282,7 @@ public class Context {
                     break;
 
                 default:
-                    throw new InternalError("sign in result type should require forward operation flow");
+                    throw new InternalInconsistencyException("sign in result type should require forward operation flow");
             }
 
             finalize(result, observer);
