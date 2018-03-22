@@ -1,6 +1,5 @@
 package co.buybuddy;
 
-import co.buybuddy.networking.authentication.ContextResolutionError;
 import co.buybuddy.networking.authentication.artifacts.concrete.ConcreteAuthenticationException;
 import co.buybuddy.networking.authentication.artifacts.concrete.Passphrase;
 import co.buybuddy.networking.authentication.artifacts.concrete.TwoFactorAuthenticationException;
@@ -14,6 +13,7 @@ import co.buybuddy.networking.errorhandling.InternalInconsistencyException;
 import co.buybuddy.networking.errorhandling.NetworkIOException;
 import co.buybuddy.networking.errorhandling.PlatformRPCException;
 import co.buybuddy.networking.http.HttpClient;
+import co.buybuddy.networking.http.HttpClientCallDelegate;
 import co.buybuddy.networking.http.HttpClientFactory;
 import co.buybuddy.networking.http.RequestBuilder;
 import com.fasterxml.jackson.annotation.JsonGetter;
@@ -57,7 +57,7 @@ public class Context {
         private class SignInForm {
             private Credentials credentials;
 
-            public SignInForm(Credentials credentials) {
+            SignInForm(Credentials credentials) {
                 this.credentials = credentials;
             }
         }
@@ -126,118 +126,127 @@ public class Context {
             String passkey;
         }
 
-        public class SignInResult {
+        private class SignInResult {
             private boolean completed;
             private ContextProcessType type;
             private long userId;
             private Passphrase passphrase;
 
-            public SignInResult(boolean completed, ContextProcessType type, long userId, Passphrase passphrase) {
+            SignInResult(boolean completed, ContextProcessType type, long userId, Passphrase passphrase) {
                 this.completed = completed;
                 this.type = type;
                 this.userId = userId;
                 this.passphrase = passphrase;
             }
 
-            public SignInResult(boolean completed, ContextProcessType type, long userId) {
+            SignInResult(boolean completed, ContextProcessType type, long userId) {
                 this.completed = completed;
                 this.type = type;
                 this.userId = userId;
             }
 
-            public long getUserId() {
+            long getUserId() {
                 return userId;
             }
 
-            public ContextProcessType getType() {
+            ContextProcessType getType() {
                 return type;
             }
 
-            public Passphrase getPassphrase() {
+            Passphrase getPassphrase() {
                 return passphrase;
             }
 
-            public boolean isCompleted() {
+            boolean isCompleted() {
                 return completed;
             }
         }
 
         private HttpClient client;
 
-        public Authenticator(HttpClient client) {
+        Authenticator(HttpClient client) {
             this.client = client;
         }
 
-        public SignInResult signIn(Credentials credentials) throws ConcreteAuthenticationException, InternalInconsistencyException, PlatformRPCException {
+        SignInResult signIn(Credentials credentials) throws ConcreteAuthenticationException, NetworkIOException {
             SignInForm form = new SignInForm(credentials);
+            Request request = null;
 
             try {
-                Request request = new RequestBuilder()
+                request = new RequestBuilder()
                         .operation("signIn", null)
                         .serialize(form)
                         .build();
-
-                try {
-                    Response response = client.newCall(request).execute();
-
-                    try {
-                        ObjectMapper mapper = new ObjectMapper();
-
-                        if (response.code() == 100) {
-                            SignInResponseContinue continueResponse = mapper.readValue(response.body().byteStream(), SignInResponseContinue.class);
-
-                            return new SignInResult(false, continueResponse.type, continueResponse.userId);
-                        } else if (response.code() == 201) {
-                            SignInResponseSuccessful successfulResponse = mapper.readValue(response.body().byteStream(), SignInResponseSuccessful.class);
-
-                            return new SignInResult(true, successfulResponse.type, successfulResponse.userId, new Passphrase(successfulResponse.userId, successfulResponse.passkey, new Date()));
-                        } else if (response.code() == 404) {
-                            throw new ConcreteAuthenticationException(credentials);
-                        } else {
-                            throw new InternalInconsistencyException("unexpected response - " + response.code());
-                        }
-                    } catch (IOException io) {
-                        throw new InternalInconsistencyException("cannot deserialize response", io);
-                    }
-                } catch (IOException io) {
-                    throw new PlatformRPCException("signIn", io);
-                }
             } catch (JsonProcessingException exc) {
                 throw new InternalInconsistencyException("error thrown while serialization", exc);
             }
-        }
 
-        public SignInResult completeSignIn(SignInResult result, OneTimeCode oneTimeCode) throws ConcreteAuthenticationException, TwoFactorAuthenticationException, InternalInconsistencyException {
-            OneTimeCodeForm form = new OneTimeCodeForm(result.getUserId(), oneTimeCode);
+            SignInResult result = client.executeCall(request, new HttpClientCallDelegate<SignInResult>() {
+                @Override
+                public SignInResult onContinue(Response response) throws IOException {
+                    ObjectMapper mapper = new ObjectMapper();
+                    SignInResponseContinue continueResponse = mapper.readValue(response.body().byteStream(), SignInResponseContinue.class);
 
-            try {
-                Request request = new RequestBuilder()
-                        .operation("completeSignIn", null)
-                        .serialize(form)
-                        .build();
+                    return new SignInResult(false, continueResponse.type, continueResponse.userId);
+                }
 
-                Response response = client.newCall(request).execute();
-                ObjectMapper mapper = new ObjectMapper();
-
-                if (response.code() == 201) {
+                @Override
+                public SignInResult onCreated(Response response) throws IOException {
+                    ObjectMapper mapper = new ObjectMapper();
                     SignInResponseSuccessful successfulResponse = mapper.readValue(response.body().byteStream(), SignInResponseSuccessful.class);
 
                     return new SignInResult(true, successfulResponse.type, successfulResponse.userId, new Passphrase(successfulResponse.userId, successfulResponse.passkey, new Date()));
-                } else if (response.code() == 404) {
-                    throw new TwoFactorAuthenticationException(oneTimeCode);
-                } else {
-                    throw new InternalInconsistencyException("could not deserialize server response");
                 }
-            } catch (JsonProcessingException exc) {
-                throw new InternalInconsistencyException("error thrown while serialization", exc);
-            } catch (IOException io) {
 
+                @Override
+                public SignInResult onNotFound(Response response) throws IOException {
+                    return null;
+                }
+            });
+
+            if (result == null) {
+                throw new ConcreteAuthenticationException(credentials);
             }
+
+            return result;
+        }
+
+        Passphrase completeSignIn(SignInResult previousResult, OneTimeCode oneTimeCode) throws TwoFactorAuthenticationException, NetworkIOException {
+            OneTimeCodeForm form = new OneTimeCodeForm(previousResult.getUserId(), oneTimeCode);
+            Request request = null;
+
+            try {
+                request = new RequestBuilder()
+                        .operation("completeSignIn", null)
+                        .serialize(form)
+                        .build();
+            } catch (JsonProcessingException e) {
+                throw new InternalInconsistencyException("cannot marshall object", e);
+            }
+
+            Passphrase result = client.executeCall(request, new HttpClientCallDelegate<Passphrase>() {
+                @Override
+                public Passphrase onContinue(Response response) throws IOException {
+                    ObjectMapper mapper = new ObjectMapper();
+
+                    SignInResponseSuccessful successfulResponse = mapper.readValue(response.body().byteStream(), SignInResponseSuccessful.class);
+
+                    return new Passphrase(successfulResponse.userId, successfulResponse.passkey, new Date());
+                }
+
+                @Override
+                public Passphrase onNotFound(Response response) throws IOException {
+                    return null;
+                }
+            });
+
+            if (result == null) {
+                throw new TwoFactorAuthenticationException(oneTimeCode);
+            }
+
+            return result;
         }
     }
-
-    public static final String LIBRARY_VERSION = "0.0.0";
-    public static final String LIBRARY_NAME = "BuyBuddyJavaSDK";
 
     private ContextStealthArtifactStorage artifactStorage;
     private ContextPassphraseRepository passphraseRepository;
@@ -259,7 +268,7 @@ public class Context {
      * @param credentials Credentials to be used in authentication.
      * @param observer An observer instance to survive from various authentication schemes.
      */
-    public void open(Credentials credentials, ContextProcessObserver observer) throws ConcreteAuthenticationException, TwoFactorAuthenticationException, InternalInconsistencyException, PlatformRPCException {
+    public void open(Credentials credentials, ContextProcessObserver observer) throws ConcreteAuthenticationException, TwoFactorAuthenticationException, IOException {
         Validate.notNull(credentials);
         Validate.notNull(observer);
 
@@ -268,24 +277,26 @@ public class Context {
         if (result.isCompleted()) {
             finalize(result, observer);
         } else {
+            Passphrase passphrase = null;
+
             switch (result.getType()) {
                 case ONE_TIME_CODE_OVER_SMS:
-                    result = getAuthenticator().completeSignIn(result, observer.requiresSmsAuthentication());
+                    passphrase = getAuthenticator().completeSignIn(result, observer.requiresSmsAuthentication());
                     break;
 
                 case ONE_TIME_CODE_OVER_EMAIL:
-                    result = getAuthenticator().completeSignIn(result, observer.requiresEmailAuthentication());
+                    passphrase = getAuthenticator().completeSignIn(result, observer.requiresEmailAuthentication());
                     break;
 
                 case ONE_TIME_CODE_OVER_EXTERNAL_AUTHENTICATOR:
-                    result = getAuthenticator().completeSignIn(result, observer.requiresExternalAuthentication());
+                    passphrase = getAuthenticator().completeSignIn(result, observer.requiresExternalAuthentication());
                     break;
 
                 default:
                     throw new InternalInconsistencyException("sign in result type should require forward operation flow");
             }
 
-            finalize(result, observer);
+            finalize(getAuthenticator().new SignInResult(true, result.type, result.userId, passphrase), observer);
         }
 
         remake(result.getPassphrase());
@@ -297,7 +308,7 @@ public class Context {
         observer.didOpen();
     }
 
-    private void remake(Passphrase passphrase) throws IOException {
+    private void remake(Passphrase passphrase) {
 
 
         currentState = State.OPEN;
